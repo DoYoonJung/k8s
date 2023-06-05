@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jung-store //이미지 이름이 jung-store
+  labels:
+    app: jung-store
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jung-store
+  template:
+    metadata:
+      labels:
+        app: jung-store
+    spec:
+      containers:
+        - name: jung-store
+          image: jungdoyoon/jung_store:1.1
+          ports:
+            - containerPort: 8080

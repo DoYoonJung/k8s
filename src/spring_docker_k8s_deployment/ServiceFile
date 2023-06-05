@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jung-store
+  namespace: default
+  labels:
+    app: jung-store
+spec:
+  selector:
+    app: jung-store
+  ports:
+    - port: 8080
+      protocol: TCP
+      nodePort: 30090
+  type: NodePort
